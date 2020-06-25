@@ -47,9 +47,10 @@ class StudentRemoveView(LoginRequiredMixin, DeleteView):
     model = Student
     success_url = reverse_lazy('home')
 
-class DraftListView(LoginRequiredMixin,ListView):
+class DraftListView(LoginRequiredMixin,ListView): 
     login_url = '/login/'
     redirect_field_name = 'school/student_detail.html'
+    template_name = 'school/student_draft_list.html'
     model = Student
 
     def get_queryset(self):

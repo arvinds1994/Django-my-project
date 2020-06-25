@@ -36,7 +36,7 @@
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'add_student' %}">Add Student</a></li>
                     <li><a href="{% url 'student_data' %}">Student Data</a></li>
-                    <li><a href="{% url 'student_draft' %}">Waiting Student</a></li>
+                    <li><a href="{% url 'student_draft_list' %}">Waiting Student</a></li>
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
                     {% else %}
                     <li>
