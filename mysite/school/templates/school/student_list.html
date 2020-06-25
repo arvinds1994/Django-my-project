@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>All Students</h1>
+    <div class="centerstage">
+        {% for student in student_list %}
+        <div class="student">
+            <table class="table">
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.first_name }}</td>
+                    <td>{{ student.middle_name }}</td>
+                    <td>{{ student.surname }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.standerd }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -22,8 +22,43 @@ class AboutView(TemplateView):
 
 class AddStudentView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
-    redirect_field_name = 'school/home.html'
+    redirect_field_name = 'school/student_detail.html'
     form_class = StudentForm
 
     model = Student
 
+class StudentDetailView(DetailView):
+    model = Student
+
+class StudentDataView(ListView):
+    model = Student
+
+    def get_queryset(self):
+        return Student.objects.filter(create_date__lte=timezone.now()).order_by('id')
+
+class StudentUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = '/login/'
+    redirect_field_name = 'school/student_detail.html'
+    form_class = StudentForm
+
+    model = Student
+
+class StudentRemoveView(LoginRequiredMixin, DeleteView):
+    model = Student
+    success_url = reverse_lazy('home')
+
+class DraftListView(LoginRequiredMixin,ListView):
+    login_url = '/login/'
+    redirect_field_name = 'school/student_detail.html'
+    model = Student
+
+    def get_queryset(self):
+        return Student.objects.filter(create_date__isnull=True).order_by('id')
+
+#########################################################################################
+
+@login_required
+def student_publish(request,pk):
+    student = get_object_or_404(Student, pk=pk)
+    student.update()
+    return redirect('student_detail',pk=pk)

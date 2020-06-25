@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for student in students %}
+        <div class="post">
+            <p class="date">created : {{ student.create_date|date:'D M Y'}}</p>
+            <h1><a href="{% url 'student_detail' pk=student.pk %}">{{student.first_name}}</a></h1>  
+        </div>
+{% endblock %}

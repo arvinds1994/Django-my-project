@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="posttitle loader">{{ student.first_name }}</h1>
+{% if student.create_date %}
+    <div class="date postdate">
+        {{ student.create_date}}
+    </div>
+{% else %}
+    <a class="btn btn-default" href="{% url 'student_publish' pk=student.pk %}">Upload</a>
+{% endif %}
+
+<p class="postcontent">{{ student.first_name|safe|linebreaksbr }}</p>
+
+{% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'student_update' pk=student.pk %}">
+        <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+    <a class="btn btn-primary" href="{% url 'student_remove' pk=student.pk %}">
+        <span class="glyphicon glyphicon-remove"></span>
+    </a>
+{% endif %}
+
+<div class="container">    
+</div>
+{% endblock %}
