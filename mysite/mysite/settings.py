@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'school'
+    'school',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'school/media')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+#SESSION_COOKIE_AGE = 300
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

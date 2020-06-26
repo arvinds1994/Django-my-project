@@ -1,12 +1,10 @@
-.loader{
-    color: chocolate;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSM-YvAx0bZc2MvrTO6V2oPEGncaDG4TPhftOwByp7D4YcfWQq&usqp=CAU);
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+body{
+    color: blueviolet;
+    background-image: none;
+  }
+li{
+  color: red;
 }
-
 
 .dropbtn {
     background-color: #4CAF50;
@@ -41,3 +39,10 @@
   .dropdown-content a:hover {background-color: #f1f1f1;}
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+  /* table design */
+
+table, th, td {
+  border: 1px solid black;
+}

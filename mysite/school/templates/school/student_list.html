@@ -4,9 +4,18 @@
 <div class="jumbotron">
     <h1>All Students</h1>
     <div class="centerstage">
-        {% for student in student_list %}
         <div class="student">
-            <table class="table">
+            <table class="table" style="border: 1px solid;">
+                <thead>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>SurName</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Standerd</th>
+                </thead>
+                {% for student in student_list %}
                 <tr>
                     <td>{{ student.id }}</td>
                     <td>{{ student.first_name }}</td>
@@ -16,9 +25,9 @@
                     <td>{{ student.age }}</td>
                     <td>{{ student.standerd }}</td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

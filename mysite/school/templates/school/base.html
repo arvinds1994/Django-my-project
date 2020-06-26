@@ -20,8 +20,14 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Russo+One&display=swap" rel="stylesheet">
+
+    <!-- jquery -->
+    <!-- <script data-require="jquery@2.0.3" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    -->
+    <script src="{% static 'js/school.js' %}"></script>
+     
 </head>
-<body class="loader">
+<body class="">
     <!-- navbar -->
     <nav class="navbar navbar-default techfont custom-navbar">
         <div class="container">
@@ -38,6 +44,7 @@
                     <li><a href="{% url 'student_data' %}">Student Data</a></li>
                     <li><a href="{% url 'student_draft_list' %}">Waiting Student</a></li>
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
+                    <li><h5>Welcome,{{ user }}</h5></li>
                     {% else %}
                     <li>
                         <div class="dropdown">
